@@ -1,0 +1,284 @@
+/* || Define custom style */
+:root {
+  /* font */
+  --ff-sans: "Manrope", sans-serif;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+  --fs-300: 0.825rem;
+
+  /* color */
+  --color-dark-grayish-blue: hsl(217, 19%, 35%);
+  --color-grayish-blue: hsl(212, 23%, 69%);
+  --color-light-grayish-blue: hsl(210, 46%, 95%);
+  --color-desaturated-dark-blue: hsl(214, 17%, 51%);
+}
+
+/* Modern CSS reset - Andy Bell*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+figcaption,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles (bullet points) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove hyperlink default styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set default font family and size */
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Set default text color */
+body,
+input,
+textarea,
+select,
+button {
+  color: #333; /* You can adjust the color as needed */
+}
+
+/* Remove text input and button default styles */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Set default button styles */
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Ensure images are responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* General style */
+body {
+  background-color: var(--color-light-grayish-blue);
+  color: var(--color-dark-grayish-blue);
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-500);
+  line-height: 1.4;
+
+  /* Place component in the center */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-700);
+
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: var(--fs-400);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-grayish-blue);
+  margin-bottom: 1.38rem;
+}
+
+button {
+  background-color: var(--color-light-grayish-blue);
+  border-radius: 50%;
+
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.article-review {
+  max-width: 87%;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+  overflow: hidden;  /* Make the overflown image adjust to the border radius */
+
+  display: grid;
+}
+
+.banner {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+}
+
+.article-review-body {
+  margin: 2.3rem;
+}
+
+/* Set the author part */
+.article-review-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.article-review-author-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.avator {
+  border-radius: 50%;
+  width: 3.1rem;
+}
+
+.article-review-author-text {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+}
+
+.article-review-author-text-time {
+  margin: 0;
+}
+
+/* setting Social Panel */
+.article-review-socialpanel {
+  background-color: hsl(217, 19%, 35%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 2.3rem 0 2.3rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.article-review-socialpanel p {
+  text-transform: uppercase;
+  color: var(--color-grayish-blue);
+  letter-spacing: 0.2rem;
+  margin: 0;
+}
+
+.icon-svg {
+  margin-right: 1rem;
+  position: relative;
+  top: 0.2rem;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  position: relative;
+  left: -1.5rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#socialShare {
+  background: var(--color-grayish-blue);
+}
+
+#socialShare svg path {
+  fill: white;
+}
+
+/* for js control styles */
+.hidden {
+  display: none;
+}
+
+.article-review-author_hidden {
+  display: none;
+}
+
+.article-review-body_hidden {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 70rem) {
+  .article-review {
+    grid-template-columns: 40% 60%;
+    max-width: 60%;
+    position: relative;
+    overflow: visible;
+  }
+
+  .banner {
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .article-review-socialpanel {
+    width: 350px;
+    height: 64px;
+    position: absolute;
+    top: 170px;
+    right: -170px;
+    padding: 1.125em 2.25em;
+    border-radius: 10px;
+    background: var(--color-dark-grayish-blue);
+  }
+
+  /* down arrow of article share - desktop */
+  .article-review-socialpanel::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: -12px;
+    left: 112px;
+    background: var(--color-dark-grayish-blue);
+    /* make this 24x24 square a triangle: */
+    transform: rotate(-45deg);
+  }
+
+  /* for js control styles */
+  /* toggle social panel */
+  .article-review-author_hidden {
+    display: flex;
+  }
+}
